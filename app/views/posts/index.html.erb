@@ -1,0 +1,13 @@
+<div class="main posts-index">
+  <div class="container">
+    <% if flash[:notice] %>
+    <%= flash[:notice] %>
+    <% end %>
+    <%= @posts.each do |post|  %>
+      <div class="posts-index-item">
+          <%= link_to(post.content, "/posts/#{post.id}/show") %>
+      </div>
+    <% end %>
+  </div>
+  <p>どうなっているんだ。なんで下にデーターベースがでるんじゃ</p>
+</div>

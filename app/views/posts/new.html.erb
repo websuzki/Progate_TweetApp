@@ -1,0 +1,15 @@
+<p>newnwenwe
+</p>
+
+<div>
+
+    <% @post.errors.full_messages.each do |mess| %>
+    <%= mess %>
+    <% end %>
+    <%= form_tag("/posts/create") do %>
+        <textarea name="new_content">
+            <%= @post.content %>
+        </textarea>
+        <input type="submit" label="送信">
+    <% end %>
+</div>

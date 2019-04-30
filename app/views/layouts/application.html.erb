@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tweetapp</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <div class="top-logo">
+        <%= link_to("Tweetapp","/") %>
+      </div>
+      <ml>
+        <li>
+          <%= link_to("新規投稿", "/posts/new") %>
+        </li>        
+        <li>
+          <%= link_to("投稿一覧", "/posts/index") %>
+        </li>
+        <li>
+          <%= link_to("TweetAppについて", "/about") %>
+        </li>
+      </ml>
+    </header>
+    <%= yield %>
+  </body>
+</html>

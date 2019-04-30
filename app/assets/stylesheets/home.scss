@@ -1,0 +1,23 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+h1 {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
+.top-main {
+    height: 900px;
+    background-image:url("/top.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    //横のサイズが画像より大きくなっても拡大して合わせる
+    background-position: center 50%;
+    //縮小した場合にも画像の中心が真ん中に来るよう設定
+}
