@@ -6,6 +6,8 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   </head>
 
   <body>
@@ -13,18 +15,23 @@
       <div class="top-logo">
         <%= link_to("Tweetapp","/") %>
       </div>
-      <ml>
-        <li>
-          <%= link_to("新規投稿", "/posts/new") %>
-        </li>        
-        <li>
-          <%= link_to("投稿一覧", "/posts/index") %>
-        </li>
-        <li>
-          <%= link_to("TweetAppについて", "/about") %>
-        </li>
-      </ml>
+      <span class="fa fa-bars menu_icon"></span>
+      <div class="header-right">
+        <ml>
+          <li>
+            <%= link_to("新規投稿", "/posts/new") %>
+          </li>        
+          <li>
+            <%= link_to("投稿一覧", "/posts/index") %>
+          </li>
+          <li>
+            <%= link_to("TweetAppについて", "/about") %>
+          </li>
+        </ml>
+      </div>
     </header>
-    <%= yield %>
+    <div class="wrapper">
+      <%= yield %>
+    </div>
   </body>
 </html>
