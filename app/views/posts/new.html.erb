@@ -1,13 +1,17 @@
 
-<div>
-
+<div class="container">
     <% @post.errors.full_messages.each do |mess| %>
-    <%= mess %>
+        <%= mess %>
     <% end %>
-    <%= form_tag("/posts/create") do %>
-        <textarea name="new_content">
-            <%= @post.content %>
-        </textarea>
-        <input type="submit" label="送信">
-    <% end %>
+    <div class="posts-new">
+        <%= form_tag("/posts/create") do %>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">新規投稿</label>
+                <textarea name="new_content" class="form-control" id="exampleFormControlTextarea1" rows="3">
+                    <%= @post.content %>
+                </textarea>
+            </div>
+            <input type="submit" label="送信">
+        <% end %>
+    </div>
 </div>

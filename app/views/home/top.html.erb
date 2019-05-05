@@ -1,6 +1,12 @@
-
-<div class="top-main">
-    <h1>つぶやきで、世界はつながる</h1>
-    <p>今の気持ちをつぶやいてみよう！</p>
+<div class="container">
+    <div class="top-main">
+        <h1>つぶやきで、世界はつながる</h1>
+        <p>今の気持ちをつぶやいてみよう！</p>
+        <%= link_to '/posts/new' do %>
+            <button type="button" class="btn btn-primary">新規投稿</button>
+        <% end %>
+        <%= link_to '/about' do %>
+            <button type="button" class="btn btn-sucess">TweetAppとは</button>
+        <% end %>
+    </div>
 </div>
-

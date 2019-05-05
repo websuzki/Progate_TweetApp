@@ -1,13 +1,19 @@
 <div class="main posts-index">
   <div class="container">
     <% if flash[:notice] %>
-    <%= flash[:notice] %>
+      <%= flash[:notice] %>
     <% end %>
-    <%= @posts.each do |post|  %>
-      <div class="posts-index-item">
+    <% @posts.each do |post|  %>
+      <div class="card">
+        <div class="card-body">
           <%= link_to(post.content, "/posts/#{post.id}/show") %>
+        </div>
       </div>
     <% end %>
+    <div>
+      <%= link_to '/posts/new' do %>
+      <button type="button" class="btn btn-primary">新規投稿</button>
+      <% end %>
+    </div>
   </div>
-  <p>どうなっているんだ。なんで下にデーターベースがでるんじゃ</p>
 </div>
