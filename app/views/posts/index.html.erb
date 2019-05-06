@@ -1,7 +1,16 @@
 <div class="main posts-index">
   <div class="container">
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">投稿一覧</h1>
+        <p class="lead">ここには新規投稿で行われた投稿が表示されます。</p>
+        <p class="lead">まだ、ユーザー機能が実装されていないので、誰の投稿かは区別できません.</p>
+      </div>
+    </div>
     <% if flash[:notice] %>
-      <%= flash[:notice] %>
+      <div class="alert alert-success" role="alert">    
+        <%= flash[:notice] %>
+      </div>
     <% end %>
     <% @posts.each do |post|  %>
       <div class="card">
