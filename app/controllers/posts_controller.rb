@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all    
+    @posts = Post.all.order(created_at: :desc)
   end
   
   def show
@@ -39,6 +39,7 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find_by(id: params[:id])
     @post.destroy
+    flash[:notice] = "投稿を削除しました"
     redirect_to("/posts/index")
   end
 end

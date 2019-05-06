@@ -12,6 +12,9 @@
         <%= flash[:notice] %>
       </div>
     <% end %>
+    <%= link_to '/posts/new' do %>
+      <button type="button" class="btn btn-primary">新規投稿</button>
+    <% end %>
     <% @posts.each do |post|  %>
       <div class="card">
         <div class="card-body">

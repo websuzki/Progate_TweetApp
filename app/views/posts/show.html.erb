@@ -2,15 +2,24 @@
   <div class="container">
     <div class="card">
       <div class="card-body">
-        <p>
+      <div class="card">
+        <div class="card-body">
+                  <p>
           <%= @post.content %>
         </p>
+        </div>
+      </div>
+
         <div class="post-time">
           <%= @post.created_at %>
         </div>
         <div>
-          <%= link_to("編集", "/posts/#{@post.id}/edit") %>
-          <%= link_to("削除", "/posts/#{@post.id}/destroy", {method: "post"}) %>
+          <%= link_to("/posts/#{@post.id}/edit") do %>
+            <button type="button" class="btn btn-success">編集</button>
+          <% end %>
+          <%= link_to("/posts/#{@post.id}/destroy", {method: "post"}) do %>
+          <button type="button" class="btn btn-danger">削除</button>
+          <% end %>
         </div>
       </div>
     </div>
