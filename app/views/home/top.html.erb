@@ -1,12 +1,22 @@
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">つぶやきで、世界はつながる</h1>
+    <p class="lead">今の気持ちをつぶやいてみよう！</p>
+  </div>
+</div>
 <div class="container">
-    <div class="top-main">
-        <h1>つぶやきで、世界はつながる</h1>
-        <p>今の気持ちをつぶやいてみよう！</p>
-        <%= link_to '/posts/new' do %>
-            <button type="button" class="btn btn-primary">新規投稿</button>
-        <% end %>
-        <%= link_to '/about' do %>
-            <button type="button" class="btn btn-sucess">TweetAppとは</button>
-        <% end %>
+    <div class="card" style="width: 18rem;">
+      <img src="/top.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">新規投稿してみよう</h5>
+            <p class="card-text">現在は、ログイン機能が実装されていないので、投稿は出来るが、誰の投稿かは区別できないよ</p>
+            <%= link_to '/posts/new' do %>
+                <button type="button" class="btn btn-primary">新規投稿</button>
+            <% end %>
+            <%= link_to '/about' do %>
+                <button type="button" class="btn btn-sucess">TweetAppとは</button>
+            <% end %>
+        </div>
     </div>
 </div>
