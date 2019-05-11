@@ -1,10 +1,22 @@
-# README
+# フルスクラッチ版 Progate TweetApp 
 
 ほぼ、Progateのコードを見ないで、ProgateのTweetAppのようなWEBアプリが作れるかに挑戦した。
 
-しかし、ところどころわからないところはProgateをチェックしているし、
+## デモ
+https://tweetapp-review.herokuapp.com/
+
+※ところどころわからないところはProgateをチェックしているし、
 なるべく同じ変数名、メソッド名を使用しているので、
 フルスクラッチとは言えない（笑）
+
+# 実装済み機能
+- 記事投稿機能
+
+# 使用技術
+- 言語：Ruby
+- フレームワーク：Ruby on Rails、Bootstrap
+- データベース：PostgreSQL
+- 本番環境：Heroku
 
 # 最終目標
 + ほぼ、ProgateのTweetAppをフルスクラッチで書く
