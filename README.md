@@ -1,11 +1,16 @@
 # README
 
-�قځAProgate�̃R�[�h�����Ȃ��ŁAProgate��TweetApp�̂悤��WEB�A�v�������邩�ɒ��킵���B
+ほぼ、Progateのコードを見ないで、ProgateのTweetAppのようなWEBアプリが作れるかに挑戦した。
 
-�������A�Ƃ���ǂ���킩��Ȃ��Ƃ����Progate���`�F�b�N���Ă��邵�A
-�Ȃ�ׂ������ϐ����A���\�b�h�����g�p���Ă���̂ŁA
-�t���X�N���b�`�Ƃ͌����Ȃ��i�΁j
+しかし、ところどころわからないところはProgateをチェックしているし、
+なるべく同じ変数名、メソッド名を使用しているので、
+フルスクラッチとは言えない（笑）
 
+# 最終目標
++ ほぼ、ProgateのTweetAppをフルスクラッチで書く
++ フロントエンドはBootstrapを使用して見栄えを整える
++ レスポンシブに対応する
++ Herokuでデプロイし、実際に動く状態にする
 
-## 5��7���i�΁j��ƃu�����`�̎g�p
-�r���܂ł�master�u�����`�݂̂ł��������A����̂��߂ɁA��ƃu�����`�����A�����ō�Ƃ����āApull request������Ƃ����A���{�Ԃɋ߂���ƕ��@�ɕύX����
+## 5月7日（火）作業ブランチの使用
+途中まではmasterブランチのみであったが、今後のために、作業ブランチを作り、そこで作業をして、pull requestをするという、より本番に近い作業方法に変更した
