@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
   end
   
+  #編集関係のアクション
   def edit
     @user = User.find_by(id: params[:id])
   end
@@ -23,6 +24,7 @@ class UsersController < ApplicationController
     end
   end
   
+#新規作成関係のアクション
   def new
     @user =User.new
   end
