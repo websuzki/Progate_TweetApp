@@ -1,0 +1,25 @@
+    <div class="container">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">ユーザー一覧</h1>
+                <p class="lead">ここには登録されているユーザーが一覧で表示されます。</p>
+                <p class="lead">ユーザーの名前をクリックすることで、詳細画面に行くことができます</p>
+            </div>
+        </div>
+        <p>ユーザー一覧</p>
+        <% @users.each do |user| %>
+            <div class="media">
+                <img src="
+                    <% if user.user_image %>
+                        <%= "/user_images/#{user.user_image}" %>
+                    <% else %>
+                        <%= "/user_images/kitten.jpg" %>
+                    <% end %>
+                " class="mr-3" width="80px" alt="...">
+              <div class="media-body">
+                <h5 class="mt-0"><%= link_to(user.name, "/users/#{user.id}/show") %></h5>
+                <%= user.email %>
+              </div>
+            </div>
+        <% end %>
+    </div>

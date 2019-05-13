@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">ユーザー詳細ページ</h1>
+            <p class="lead">ここには登録ユーザーの詳細が表示されます。</p>
+            <p class="lead">また、登録内容の変更をすることもできます</p>
+        </div>
+    </div>
+    <% @user.errors.full_messages.each do |message| %>
+
+        <div class="alert alert-danger" role="alert">
+                    <%= message %>
+        </div>
+    <% end %>
+    <%= form_tag("/users/#{@user.id}/update") do %>
+        <p>名前</p>
+        <input value="<%= @user.name %>" name="name">
+        <P>Emailアドレス</P>
+        <input value="<%= @user.email %>" name="email">
+        <input type="submit" value="内容を変更する">
+    <% end %>
+</div>
