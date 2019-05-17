@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+
+  
   def index
     @users = User.all
   end
@@ -37,5 +39,26 @@ class UsersController < ApplicationController
     else
       render("users/new")
     end
+  end
+  
+  def login_form
+        @user =User.new
+  end
+  
+  def login
+    @user =User.find_by(name: params[:name], email: params[:email])
+    if @user
+      @current_user = @user.id
+      flash[:notice] = "ログインしました"
+      redirect_to("/posts/index")
+    else
+      flash[:notice] = "名前が存在しないか、メールアドレスが間違っています"
+      render('/users/login_form')
+    end
+  end
+  
+  def logout
+    @current_user = nil
+    redirect_to('/login_form')
   end
 end
