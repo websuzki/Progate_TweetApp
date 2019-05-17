@@ -1,0 +1,15 @@
+<div class="container">
+    <h1>ログイン</h1>
+    <% if flash[:notice] %>
+        <div class="alert alert-danger" role="alert">
+            <%= flash[:notice] %>
+        </div>
+    <% end %>
+    <%= form_tag("/users/login") do %>
+        <P>ユーザー名</P>
+        <input name="name">
+        <p>Emailアドレス</p>
+        <input name="email">
+        <input type="submit" value="ログイン">
+    <% end %>
+</div>
