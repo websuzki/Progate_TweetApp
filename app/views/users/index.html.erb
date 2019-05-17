@@ -6,6 +6,11 @@
                 <p class="lead">ユーザーの名前をクリックすることで、詳細画面に行くことができます</p>
             </div>
         </div>
+        <% if flash[:notice] %>
+            <div class="alert alert-success" role="alert">
+              <%= flash[:notice] %>
+            </div>
+        <% end %>
         <p>ユーザー一覧</p>
         <% @users.each do |user| %>
             <div class="media">

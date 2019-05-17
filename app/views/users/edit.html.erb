@@ -7,9 +7,8 @@
         </div>
     </div>
     <% @user.errors.full_messages.each do |message| %>
-
         <div class="alert alert-danger" role="alert">
-                    <%= message %>
+            <%= message %>
         </div>
     <% end %>
     <%= form_tag("/users/#{@user.id}/update") do %>
