@@ -21,7 +21,7 @@
           <li class="nav-item active">
             <%= link_to("HOME","/", {class: "nav-link"}) %>
           </li>
-          <% if @current_user == nil %>
+          <% if session[:user_id] == nil %>
             <li class="nav-item">
               <%= link_to 'ログイン', '/login_form', class: 'nav-link' %>
             </li> 
@@ -33,6 +33,11 @@
             </li>
           <% else %>
             <li class="nav-item">
+              <%= link_to "/users/#{@current_user.id}/show", class: 'nav-link' do %>
+                <img src="<%= "/user_images/#{@current_user.user_image}" %>" width="25px"><%= " :#{@current_user.name}" %>
+              <% end %>
+            </li> 
+            <li class="nav-item">
               <%= link_to '投稿一覧', '/posts/index', class: 'nav-link' %>
             </li>
             <li class="nav-item">
@@ -42,7 +47,7 @@
               <%= link_to("新規投稿", "/posts/new", {class: "nav-link"}) %>
             </li>
             <li class="nav-item">
-              <%= link_to("ログアウト", "/logout", {class: "nav-link"}) %>
+              <%= link_to 'ログアウト', '/logout', method: 'post', class: 'nav-link' %>
             </li>
           <% end %>
           <li class="nav-item dropdown">
