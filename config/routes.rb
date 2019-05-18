@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   get 'users/index'
+  get 'login_form' => 'users#login_form'
+  post 'logout' => 'users#logout'
+  post 'users/login' => 'users#login'
   get 'users/:id/show' => 'users#show'
   get 'users/:id/edit' => 'users#edit'
   post 'users/:id/update' => 'users#update'
