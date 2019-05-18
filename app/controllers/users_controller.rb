@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  before_action :check_logged_in, {only: [:index, :show, :update, :edit, :logout]}
+  
+  
   def index
     @users = User.all
   end
@@ -30,12 +33,36 @@ class UsersController < ApplicationController
   end
   
   def create
-    @user = User.new(name: params[:name], email: params[:email])
+    @user = User.new(name: params[:name], email: params[:email], password: params[:password])
     if @user.save
-      flash[:notice] = "新規登録が完了しました"
+      session[:user_id] = @user.id
+      @user.user_image = "kitten.jpg"
+      flash[:notice] = "#{@user.name}さん、新規登録が完了しました"
       redirect_to("/users/index")
     else
       render("users/new")
     end
+  end
+  
+  def login_form
+        @user =User.new
+  end
+  
+  def login
+    @user =User.find_by(email: params[:email], password: params[:password])
+    if @user
+      session[:user_id] = @user.id
+      flash[:notice] = "#{@user.name} さん、おかえりなさい"
+      redirect_to("/posts/index")
+    else
+      flash[:notice] = "名前が存在しないか、メールアドレスが間違っています"
+      render('/users/login_form')
+    end
+  end
+  
+  def logout
+    session[:user_id] = nil
+    flash[:notice] = "ログアウトしました"
+    render('login_form')
   end
 end
