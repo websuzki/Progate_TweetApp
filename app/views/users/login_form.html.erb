@@ -6,10 +6,10 @@
         </div>
     <% end %>
     <%= form_tag("/users/login") do %>
-        <P>ユーザー名</P>
-        <input name="name">
         <p>Emailアドレス</p>
         <input name="email">
+        <P>パスワード</P>
+        <input type="password" name="password">
         <input type="submit" value="ログイン">
     <% end %>
 </div>
