@@ -1,0 +1,17 @@
+<div class="container">
+    <h1>新規ユーザー作成</h1>
+    <% @user.errors.full_messages.each do |message| %>
+        <div class="alert alert-danger" role="alert">
+            <%= message %>
+        </div>
+    <% end %>
+    <%= form_tag("/users/create") do %>
+        <P>ユーザー名</P>
+        <input value="<%= @user.name %>" name="name">
+        <p>Emailアドレス</p>
+        <input value="<%= @user.email %>" name="email">
+        <p>パスワード</p>
+        <input type="password" name="password">
+        <input type="submit" value="新規ユーザー作成">
+    <% end %>
+</div>

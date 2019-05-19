@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">ユーザー詳細ページ</h1>
+            <p class="lead">ここには登録ユーザーの詳細が表示されます。</p>
+            <p class="lead">また、登録内容の変更をすることもできます</p>
+        </div>
+    </div>
+    <% if flash[:notice] %>
+        <div class="alert alert-success" role="alert">
+          <%= flash[:notice] %>
+        </div>
+    <% end %>
+    <div class="card" style="width: 18rem;">
+        <img src="
+            <% if @user.user_image %>
+                <%= "/user_images/#{@user.user_image}" %>
+            <% else %>
+                <%= "/user_images/kitten.jpg" %>
+            <% end %>
+            " class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title"><%= @user.name %></h5>
+            <p class="card-text"><%= @user.email %></p>
+            <a href="/users/index" class="btn btn-primary">ユーザー一覧へ</a>
+            <%= link_to "/users/#{@user.id}/edit" do %>
+            <button type="button" class="btn btn-success">編集</button>
+            <% end %>
+            <a href="#" class="btn btn-danger">削除</a>
+        </div>
+    </div>
+</div>
