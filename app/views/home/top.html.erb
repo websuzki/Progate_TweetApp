@@ -10,10 +10,10 @@
         <div class="card col-md-4" style="padding: 0px;">
           <img src="/top.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">新規投稿してみよう</h5>
-                <p class="card-text">現在は、ログイン機能が実装されていないので、投稿は出来るが、誰の投稿かは区別できないよ</p>
-                <%= link_to '/posts/new' do %>
-                    <button type="button" class="btn btn-primary">新規投稿</button>
+                <h5 class="card-title">投稿してみよう</h5>
+                <p class="card-text">ユーザー登録をすることで、投稿が可能となります</p>
+                <%= link_to '/users/new' do %>
+                    <button type="button" class="btn btn-primary">新規ユーザー登録</button>
                 <% end %>
             </div>
         </div>
@@ -21,7 +21,7 @@
           <img src="/about.jpg" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">TweetAppとは</h5>
-                <p class="card-text">現在は、ログイン機能が実装されていないので、投稿は出来るが、誰の投稿かは区別できないよ</p>
+                <p class="card-text">Twitterのように複数のユーザーがつぶやきを投稿できるサービスです</p>
                 <%= link_to '/about' do %>
                     <button type="button" class="btn btn-secondary">TweetAppとは</button>
                 <% end %>
