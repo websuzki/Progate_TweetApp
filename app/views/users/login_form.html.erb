@@ -1,5 +1,15 @@
 <div class="container">
-    <h1>ログイン</h1>
+
+    <div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">ログイン</h1>
+    <p class="lead">ユーザー登録がまだの場合は先にユーザー登録してね</p>
+    <p> </p>
+    <%= link_to '/users/new' do %>
+        <button type="button" class="btn btn-primary">新規ユーザー登録</button>
+    <% end %>
+  </div>
+</div>
     <% if flash[:notice] %>
         <div class="alert alert-danger" role="alert">
             <%= flash[:notice] %>
@@ -10,6 +20,6 @@
         <input name="email">
         <P>パスワード</P>
         <input type="password" name="password">
-        <input type="submit" value="ログイン">
+        <button type="submit" class="btn btn-primary">ログイン</button>
     <% end %>
 </div>
