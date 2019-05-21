@@ -14,4 +14,11 @@ class ApplicationController < ActionController::Base
         redirect_to("/login_form")
     end
   end
+  
+  def check_correct_user
+    if @current_user.id != params[:id].to_i
+      flash[:notice] = "権限がありません"
+      redirect_to("/users/index")
+    end
+  end
 end
