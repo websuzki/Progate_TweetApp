@@ -31,4 +31,18 @@
             <% end %>
         </div>
     </div>
+    <h1><%= @user.name %>さんの投稿</h1>
+    <ul class="list-group">
+        <% @user.posts.each do |post| %>
+            <li class="list-group-item">
+                <div class="media">
+                    <img src="<%= "/user_images/#{post.user.user_image}" %>" width="64px" class="mr-3" alt="...">
+                    <div class="media-body">
+                        <h5 class="mt-0"><%= post.user.name %></h5>
+                        <%= link_to(post.content, "/posts/#{post.id}/edit" ) %>
+                    </div>
+                </div>
+            </li>
+        <% end %>
+    </ul>
 </div>

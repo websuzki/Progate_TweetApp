@@ -12,15 +12,19 @@
         <%= flash[:notice] %>
       </div>
     <% end %>
+
     <%= link_to '/posts/new' do %>
       <button type="button" class="btn btn-primary">新規投稿</button>
     <% end %>
     <% @posts.each do |post|  %>
-      <div class="card">
-        <div class="card-body">
+      <div class="media">
+        <img src="<%= "/user_images/#{post.user.user_image}" %>" width="64px" class="mr-3" alt="...">
+        <div class="media-body">
+          <h5 class="mt-0"><%= post.user.name %></h5>
           <%= link_to(post.content, "/posts/#{post.id}/show") %>
         </div>
       </div>
+
     <% end %>
     <div>
       <%= link_to '/posts/new' do %>
