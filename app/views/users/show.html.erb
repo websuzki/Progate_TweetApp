@@ -23,10 +23,12 @@
             <h5 class="card-title"><%= @user.name %></h5>
             <p class="card-text"><%= @user.email %></p>
             <a href="/users/index" class="btn btn-primary">ユーザー一覧へ</a>
-            <%= link_to "/users/#{@user.id}/edit" do %>
-            <button type="button" class="btn btn-success">編集</button>
+            <% if @user.id == @current_user.id %>
+                <%= link_to "/users/#{@user.id}/edit" do %>
+                <button type="button" class="btn btn-success">編集</button>
+                <% end %>
+                <a href="#" class="btn btn-danger">削除</a>
             <% end %>
-            <a href="#" class="btn btn-danger">削除</a>
         </div>
     </div>
 </div>
