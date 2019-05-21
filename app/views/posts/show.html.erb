@@ -2,23 +2,24 @@
   <div class="container">
     <div class="card">
       <div class="card-body">
-      <div class="card">
-        <div class="card-body">
-                  <p>
-          <%= @post.content %>
-        </p>
+        <div class="media">
+          <img src="<%= "/user_images/#{@user.user_image}" %>" width="64px" class="mr-3" alt="...">
+          <div class="media-body">
+            <h5 class="mt-0"><%= @post.user.name %></h5>
+            <%= @post.content %>
+          </div>
         </div>
-      </div>
-
         <div class="post-time">
           <%= @post.created_at %>
         </div>
         <div>
-          <%= link_to("/posts/#{@post.id}/edit") do %>
-            <button type="button" class="btn btn-success">編集</button>
-          <% end %>
-          <%= link_to("/posts/#{@post.id}/destroy", {method: "post"}) do %>
-          <button type="button" class="btn btn-danger">削除</button>
+          <% if @current_user.id == @post.user_id %>
+            <%= link_to("/posts/#{@post.id}/edit") do %>
+              <button type="button" class="btn btn-success">編集</button>
+            <% end %>
+            <%= link_to("/posts/#{@post.id}/destroy", {method: "post"}) do %>
+            <button type="button" class="btn btn-danger">削除</button>
+            <% end %>
           <% end %>
         </div>
       </div>
