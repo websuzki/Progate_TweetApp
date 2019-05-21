@@ -19,6 +19,12 @@ class UsersController < ApplicationController
     @user =User.find_by(id: params[:id])
     @user.name = params[:name]
     @user.email = params[:email]
+    @user.password = params[:password]
+    if params[:image]
+      @user.user_image = "#{@user.id}.jpg"
+      image = params[:image]
+      File.binwrite("public/user_images/#{@user.user_image}", image.read)
+    end
     if @user.save
       flash[:notice] = "登録内容を変更しました"
       redirect_to("/users/#{@user.id}/show")
@@ -33,10 +39,9 @@ class UsersController < ApplicationController
   end
   
   def create
-    @user = User.new(name: params[:name], email: params[:email], password: params[:password])
+    @user = User.new(name: params[:name], email: params[:email], password: params[:password], user_image: "kitten.jpg")
     if @user.save
       session[:user_id] = @user.id
-      @user.user_image = "kitten.jpg"
       flash[:notice] = "#{@user.name}さん、新規登録が完了しました"
       redirect_to("/users/index")
     else

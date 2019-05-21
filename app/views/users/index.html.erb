@@ -14,13 +14,7 @@
         <p>ユーザー一覧</p>
         <% @users.each do |user| %>
             <div class="media">
-                <img src="
-                    <% if user.user_image %>
-                        <%= "/user_images/#{user.user_image}" %>
-                    <% else %>
-                        <%= "/user_images/kitten.jpg" %>
-                    <% end %>
-                " class="mr-3" width="80px" alt="...">
+                <img src="<%= "/user_images/#{user.user_image}" %>" class="mr-3" width="80px" alt="...">
               <div class="media-body">
                 <h5 class="mt-0"><%= link_to(user.name, "/users/#{user.id}/show") %></h5>
                 <%= user.email %>
