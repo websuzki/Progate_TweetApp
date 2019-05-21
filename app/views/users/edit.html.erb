@@ -11,11 +11,16 @@
             <%= message %>
         </div>
     <% end %>
-    <%= form_tag("/users/#{@user.id}/update") do %>
+    <%= form_tag("/users/#{@user.id}/update", {multipart:true}) do %>
         <p>名前</p>
         <input value="<%= @user.name %>" name="name">
         <P>Emailアドレス</P>
         <input value="<%= @user.email %>" name="email">
-        <input type="submit" value="内容を変更する">
+        <P>ユーザー画像</P>
+        <p>JPEG画像のみアップロードできます</p>
+        <input name="image" type="file">       
+        <P>パスワード</P>
+        <input value="<%= @user.password %>" name="password">
+        <button type="submit" class="btn btn-primary">内容を変更する</button>
     <% end %>
 </div>

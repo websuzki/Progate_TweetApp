@@ -32,6 +32,8 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap', '~> 4.3.1'
+gem 'hirb'   # モデルの出力結果を表形式で表示するGem
+gem 'hirb-unicode' # 日本語などマルチバイト文字の出力時の出力結果のずれに対応
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
