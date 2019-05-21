@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   before_action :check_logged_in, {only: [:index, :show, :update, :edit, :logout]}
+  before_action :check_correct_user, {only: [:edit, :update,]}
+  
   
   
   def index
